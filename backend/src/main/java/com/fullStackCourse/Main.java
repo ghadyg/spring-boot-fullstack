@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
+
 import java.util.Random;
 
 @SpringBootApplication
@@ -21,6 +21,7 @@ public class Main {
     public static void main(String[] args) {
 
         ConfigurableApplicationContext configurableApplicationContext = SpringApplication.run(Main.class, args);
+
 //        String[] beanDefinitionNames = configurableApplicationContext.getBeanDefinitionNames();
 //
 //        for(var n : beanDefinitionNames)
@@ -40,7 +41,7 @@ public class Main {
             Customer customer = new Customer(
                     firstName+" "+lastName,
                     firstName +"."+ lastName +"@example.com",
-                    random.nextInt(16,99)
+                    random.nextInt(10,99)
             );
 
 
