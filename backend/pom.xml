@@ -178,6 +178,7 @@
 							<tag>latest</tag>
 						</tags>
 					</to>
+					<allowInsecureRegistries>true</allowInsecureRegistries>
 				</configuration>
 				<executions>
 					<execution>
