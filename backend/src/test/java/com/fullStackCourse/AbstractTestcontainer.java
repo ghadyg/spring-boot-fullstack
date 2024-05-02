@@ -33,7 +33,7 @@ public abstract class AbstractTestcontainer {
             new PostgreSQLContainer<>("postgres:latest")
                     .withDatabaseName("ghady-dao-unit-test")
                     .withUsername("ghady")
-                    .withPassword("GG5678#@");
+                    .withPassword("password");
 
     @DynamicPropertySource
     private static void registerDataSourceProperties(DynamicPropertyRegistry registry)
