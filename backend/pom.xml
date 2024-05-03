@@ -177,8 +177,12 @@
 						<tags>
 							<tag>latest</tag>
 						</tags>
+						<auth>
+							<username>ghady22</username>
+							<password>realmadrid9@@</password>
+						</auth>
 					</to>
-					<allowInsecureRegistries>true</allowInsecureRegistries>
+
 				</configuration>
 				<executions>
 					<execution>
