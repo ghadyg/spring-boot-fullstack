@@ -20,6 +20,8 @@
 	<properties>
 		<java.version>21</java.version>
 		<docker.username>ghady22</docker.username>
+		<docker.image.username>demo</docker.image.username>
+		<docker.image.tag/>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -173,14 +175,10 @@
 						</platforms>
 					</from>
 					<to>
-						<image>docker.io/ghady22/${project.artifactId}:${project.version}</image>
+						<image>docker.io/${docker.username}/${docker.image.username}:${docker.image.tag}</image>
 						<tags>
 							<tag>latest</tag>
 						</tags>
-						<auth>
-							<username>ghady22</username>
-							<password>realmadrid9@@</password>
-						</auth>
 					</to>
 
 				</configuration>
