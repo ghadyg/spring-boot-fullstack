@@ -30,6 +30,9 @@ jobs:
         working-directory:  ./backend
     steps:
       - uses: actions/checkout@v4
+      - name: Slack Message to setup java
+        run: >
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Setting up JAVA Env"}' ${{ secrets.SLACK_URL }}
       - uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
@@ -45,6 +48,9 @@ jobs:
         run: echo "BUILD_NUMBER=$(date '+%d.%m.%Y.%H.%M.%S')" >> $GITHUB_OUTPUT
       - name: Build Package Push with mvn
         run: mvn -ntp -B verify -Ddocker.image.tag=${{ steps.build-number.outputs.BUILD_NUMBER }} jib:build
+      - name: Slack Message to Check mvn verification
+        run: >
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"New Image uploaded to docker"}' ${{ secrets.SLACK_URL }}
       - name: Update Dockerrun.aws.json api image tag with new build number
         run:  |
           echo "Dockerrun.aws.json before updating tag"
@@ -63,6 +69,9 @@ jobs:
           version_description: ${{github.SHA}}
           region: ${{ secrets.EB_ENVIROMENT_REGION }}
           deployment_package: backend/Dockerrun.aws.json
+      - name: Slack Message to aws upload
+        run: >
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"Successfully uploaded to AWS"}' ${{ secrets.SLACK_URL }}
       - name: Commit and push Dockerrun.aws.json
         run: |
           git config user.name github-actions
