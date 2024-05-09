@@ -30,6 +30,9 @@ jobs:
         working-directory:  ./backend
     steps:
       - uses: actions/checkout@v4
+      - name: Slack commit message and sha
+        run: >
+          curl -X POST -H 'Content-type: application/json' --data '{"text":"https://github.com/ghadyg/spring-boot-fullstack/commit/${{ github.sha }} - ${{ github.event.head_commit.message }}"}' ${{ secrets.SLACK_URL }}
       - name: Slack Message to setup java
         run: >
           curl -X POST -H 'Content-type: application/json' --data '{"text":"Setting up JAVA Env"}' ${{ secrets.SLACK_URL }}
