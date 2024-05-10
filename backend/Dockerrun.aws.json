@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "customer-api",
-      "image": "ghady22/demo:09.05.2024.15.37.51",
+      "image": "ghady22/demo:10.05.2024.05.42.28",
       "essential": true,
       "memory": 512,
       "portMappings": [
