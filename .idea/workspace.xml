@@ -4,22 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="frontend added with reactjs">
+    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="added gender feature to the App">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerListDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerListDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJPADataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRepositoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRowMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +66,7 @@
       <recent name="com.fullStackCourse" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.customer in demo">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.Main" />
       <module name="demo" />
@@ -153,10 +140,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.customer in demo" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
         <item itemvalue="JUnit.CustomerRowMapperTest.mapRow" />
-        <item itemvalue="JUnit.customer in demo" />
         <item itemvalue="JUnit.CustomerJPADataAccessServiceTest" />
       </list>
     </recent_temporary>
@@ -186,12 +173,21 @@
       <option name="project" value="LOCAL" />
       <updated>1715269030302</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="added gender feature to the App">
+      <option name="closed" value="true" />
+      <created>1715319499612</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715319499612</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="send slack message with commit message and sha" />
     <MESSAGE value="frontend added with reactjs" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend added with reactjs" />
+    <MESSAGE value="added gender feature to the App" />
+    <option name="LAST_COMMIT_MESSAGE" value="added gender feature to the App" />
   </component>
 </project>
