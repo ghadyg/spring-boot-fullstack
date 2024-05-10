@@ -35,7 +35,8 @@ public class CustomerService {
         customerDao.insertCustomer(new Customer(
                 customer.name(),
                 customer.email(),
-                customer.age()
+                customer.age(),
+                customer.gender()
         ));
     }
 

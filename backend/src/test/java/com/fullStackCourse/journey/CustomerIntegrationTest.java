@@ -4,6 +4,7 @@ package com.fullStackCourse.journey;
 import com.fullStackCourse.customer.Customer;
 import com.fullStackCourse.customer.CustomerRegistrationRequest;
 import com.fullStackCourse.customer.CustomerUpdateRequest;
+import com.fullStackCourse.customer.Gender;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import org.junit.jupiter.api.Test;
@@ -40,7 +41,7 @@ public class CustomerIntegrationTest {
         String email = fakerName.lastName()+"-"+UUID.randomUUID()+"@testgmail.com";
         int age = RANDOM.nextInt(1,100);
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                name,email,age
+                name,email,age, Gender.male
         );
 
         //send a post req
@@ -65,7 +66,7 @@ public class CustomerIntegrationTest {
 
         //make sure that the customer is present
         Customer expectedCustomer = new Customer(
-                name,email,age
+                name,email,age,Gender.male
         );
         assertThat(allCustomers)
                 .usingRecursiveFieldByFieldElementComparatorIgnoringFields("id")
@@ -94,7 +95,7 @@ public class CustomerIntegrationTest {
         String email = fakerName.lastName()+"-"+UUID.randomUUID()+"@testgmail.com";
         int age = RANDOM.nextInt(1,100);
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                name,email,age
+                name,email,age,Gender.male
         );
 
         //send a post req
@@ -147,7 +148,7 @@ public class CustomerIntegrationTest {
         String email = fakerName.lastName()+"-"+UUID.randomUUID()+"@testgmail.com";
         int age = RANDOM.nextInt(1,100);
         CustomerRegistrationRequest request = new CustomerRegistrationRequest(
-                name,email,age
+                name,email,age,Gender.male
         );
 
         //send a post req
@@ -200,8 +201,8 @@ public class CustomerIntegrationTest {
                 .getResponseBody();
 
         Customer customer = new Customer(
-                id,newName,email,age
-        );
+                id,newName,email,age,
+                Gender.male);
 
         assertThat(updatedCustomer).isEqualTo(customer);
     }

@@ -15,10 +15,10 @@ public class CustomerListDataAccessService implements CustomerDao {
     static {
         customers = new ArrayList<>();
 
-        Customer alex = new Customer(1,"Alex","alex@gmail.com",22);
+        Customer alex = new Customer(1,"Alex","alex@gmail.com",22, Gender.male);
         customers.add(alex);
 
-        Customer lily = new Customer(2,"lily","lily@gmail.com",20);
+        Customer lily = new Customer(2,"lily","lily@gmail.com",20, Gender.female);
         customers.add(lily);
     }
 
@@ -62,6 +62,6 @@ public class CustomerListDataAccessService implements CustomerDao {
         customers.stream().filter(c->c.getId().equals(customer.getId()))
                 .findFirst().ifPresent(c->new Customer(customer.getId(),
                         customer.getName(), customer.getEmail(),
-                        customer.getAge()));
+                        customer.getAge(), customer.getGender()));
     }
 }

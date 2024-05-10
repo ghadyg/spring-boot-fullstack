@@ -3,6 +3,7 @@ package com.fullStackCourse;
 
 import com.fullStackCourse.customer.Customer;
 import com.fullStackCourse.customer.CustomerRepository;
+import com.fullStackCourse.customer.Gender;
 import com.github.javafaker.Faker;
 import com.github.javafaker.Name;
 import org.springframework.boot.CommandLineRunner;
@@ -11,7 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
 
-import java.util.List;
 import java.util.Random;
 
 @SpringBootApplication
@@ -40,7 +40,8 @@ public class Main {
             Customer customer = new Customer(
                     firstName+" "+lastName,
                     firstName +"."+ lastName +"@example.com",
-                    random.nextInt(16,99)
+                    random.nextInt(16,99),
+                    Gender.female
             );
 
 

@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;
@@ -17,7 +15,6 @@ import java.util.Optional;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 
@@ -47,8 +44,8 @@ class CustomerServiceTest {
     void canGetCustomer() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22
-        );
+                id,"ghady","ghady@gmail.com",22,
+                Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 
         Customer actual = underTest.getCustomer(1);
@@ -61,8 +58,8 @@ class CustomerServiceTest {
     void canNotGetCustomer() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22
-        );
+                id,"ghady","ghady@gmail.com",22,
+                Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.empty());
 
         assertThatThrownBy(()->underTest.getCustomer(1))
@@ -81,7 +78,7 @@ class CustomerServiceTest {
 
 
         CustomerRegistrationRequest customer = new CustomerRegistrationRequest(
-                "ghady", email,22
+                "ghady", email,22,Gender.male
         );
 
         assertThatThrownBy(()->underTest.addCustomer(customer))
@@ -101,7 +98,7 @@ class CustomerServiceTest {
 
 
         CustomerRegistrationRequest customer = new CustomerRegistrationRequest(
-                "ghady", email,22
+                "ghady", email,22,Gender.male
         );
 
         underTest.addCustomer(customer);
@@ -116,6 +113,7 @@ class CustomerServiceTest {
         assertThat(capturedCustomer.getName()).isEqualTo(customer.name());
         assertThat(capturedCustomer.getEmail()).isEqualTo(customer.email());
         assertThat(capturedCustomer.getAge()).isEqualTo(customer.age());
+        assertThat(capturedCustomer.getGender()).isEqualTo(Gender.male);
 
 
     }
@@ -148,8 +146,8 @@ class CustomerServiceTest {
     void updateCustomer() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22
-        );
+                id,"ghady","ghady@gmail.com",22,
+                Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 
         String email = "alex@gmail.com";
@@ -169,6 +167,7 @@ class CustomerServiceTest {
         assertThat(captured.getAge()).isEqualTo(customerUpdateRequest.age());
         assertThat(captured.getName()).isEqualTo(customerUpdateRequest.name());
         assertThat(captured.getEmail()).isEqualTo(customerUpdateRequest.email());
+        assertThat(captured.getGender()).isEqualTo(Gender.male);
 
     }
 
@@ -176,8 +175,8 @@ class CustomerServiceTest {
     void canNotUpdateCustomerThrowDup() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22
-        );
+                id,"ghady","ghady@gmail.com",22,
+                Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 
         String email = "alex@gmail.com";
@@ -198,8 +197,8 @@ class CustomerServiceTest {
     void canNotUpdateCustomerNoChanges() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22
-        );
+                id,"ghady","ghady@gmail.com",22,
+                Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 
         String email = "alex@gmail.com";

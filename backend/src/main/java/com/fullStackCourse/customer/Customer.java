@@ -1,7 +1,6 @@
 package com.fullStackCourse.customer;
 
 import jakarta.persistence.*;
-import org.springframework.lang.NonNull;
 
 import java.util.Objects;
 
@@ -45,17 +44,25 @@ public class Customer{
     )
     private Integer age;
 
-    public Customer(Integer id, String name, String email, Integer age) {
+    @Column(
+            nullable = false
+    )
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
+
+    public Customer(Integer id, String name, String email, Integer age, Gender gender) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.age = age;
+        this.gender = gender;
     }
-    public Customer( String name, String email, Integer age) {
+    public Customer( String name, String email, Integer age,Gender gender) {
 
         this.name = name;
         this.email = email;
         this.age = age;
+        this.gender = gender;
     }
     public Customer() {
     }
@@ -96,21 +103,19 @@ public class Customer{
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof Customer customer)) return false;
-        return Objects.equals(getId(), customer.getId()) && Objects.equals(getName(), customer.getName()) && Objects.equals(getEmail(), customer.getEmail()) && Objects.equals(getAge(), customer.getAge());
+        return Objects.equals(getId(), customer.getId()) && Objects.equals(getName(), customer.getName()) && Objects.equals(getEmail(), customer.getEmail()) && Objects.equals(getAge(), customer.getAge()) && getGender() == customer.getGender();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getName(), getEmail(), getAge());
+        return Objects.hash(getId(), getName(), getEmail(), getAge(), getGender());
     }
 
-    @Override
-    public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", age=" + age +
-                '}';
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 }

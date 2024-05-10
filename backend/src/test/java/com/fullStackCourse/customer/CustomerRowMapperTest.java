@@ -1,13 +1,11 @@
 package com.fullStackCourse.customer;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -22,11 +20,12 @@ class CustomerRowMapperTest {
         when(resultSet.getInt("age")).thenReturn(19);
         when(resultSet.getString("name")).thenReturn("alex");
         when(resultSet.getString("email")).thenReturn("alex@gmail.com");
+        when(resultSet.getString("gender")).thenReturn("Male");
         Customer customer = customerRowMapper.mapRow(resultSet, 1);
 
         Customer expected = new Customer(
-                1,"alex","alex@gmail.com",19
-        ) ;
+                1,"alex","alex@gmail.com",19,
+                Gender.male) ;
         assertThat(customer).isEqualTo(expected);
     }
 }
