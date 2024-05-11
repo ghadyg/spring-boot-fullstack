@@ -7,6 +7,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/customers")
+@CrossOrigin
 public class CustomerController {
 
     private final CustomerService customerService;
