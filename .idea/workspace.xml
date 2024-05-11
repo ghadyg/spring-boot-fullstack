@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="added gender feature to the App">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/backend-cd.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRowMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/Card.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/main.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/services/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/services/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/config/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/config/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +75,11 @@
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.fullStackCourse" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\GhadyG\Desktop\FullStackCourse" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.customer in demo">
+  <component name="RunManager" selected="Docker.docker-compose.yml.demo: Compose Deployment">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.Main" />
       <module name="demo" />
@@ -76,37 +89,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomerJPADataAccessServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fullStackCourse.customer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fullStackCourse.customer" />
-      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.customer.CustomerJPADataAccessServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CustomerRowMapperTest.mapRow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.fullStackCourse.customer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.fullStackCourse.customer" />
-      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.customer.CustomerRowMapperTest" />
-      <option name="METHOD_NAME" value="mapRow" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -125,6 +107,14 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration name="docker-compose.yml.db: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -138,13 +128,26 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="docker-compose.yml.demo: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="services">
+            <list>
+              <option value="demo" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.customer in demo" />
+        <item itemvalue="Docker.docker-compose.yml.demo: Compose Deployment" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
-        <item itemvalue="JUnit.CustomerRowMapperTest.mapRow" />
-        <item itemvalue="JUnit.CustomerJPADataAccessServiceTest" />
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="JUnit.customer in demo" />
       </list>
     </recent_temporary>
   </component>
@@ -181,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715319499612</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added gender feature to the App">
+      <option name="closed" value="true" />
+      <created>1715319706155</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715319706155</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

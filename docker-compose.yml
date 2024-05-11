@@ -19,11 +19,23 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/customer
     ports:
-      - "8088:8080"
+      - "8080:8080"
     networks:
       - db
     depends_on:
       - db
+    restart: unless-stopped
+  demo-react:
+    container_name: demo-react
+    image: ghady22/demo-react
+    build:
+      context: Frontend/react
+      args:
+        api_base_url: http://localhost:8080
+    ports:
+      - "3000:5173"
+    depends_on:
+      - demo
     restart: unless-stopped
 
 

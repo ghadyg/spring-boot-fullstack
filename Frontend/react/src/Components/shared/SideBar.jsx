@@ -96,7 +96,7 @@ function SidebarContent({ onClose, ...rest }) {
 
 function NavItem({ icon, children, ...rest }) {
   return (
-    <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+   // <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -121,7 +121,7 @@ function NavItem({ icon, children, ...rest }) {
         )}
         {children}
       </Flex>
-    </Link>
+   // </Link>
   );
 }
 
