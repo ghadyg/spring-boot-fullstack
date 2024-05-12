@@ -6,8 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="modified the cors security">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerrun.aws.json" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerrun.aws.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/.env" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
