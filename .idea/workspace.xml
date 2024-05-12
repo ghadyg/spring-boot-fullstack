@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="Modified the sidebar color">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/frontend-cd.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/frontend-cd.yml" afterDir="false" />
+    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="modified the frontend deploy script">
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715502877985</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="modified the frontend deploy script">
+      <option name="closed" value="true" />
+      <created>1715503042736</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1715503042736</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -214,6 +222,7 @@
     <MESSAGE value="added gender feature to the App" />
     <MESSAGE value="modified the cors security" />
     <MESSAGE value="Modified the sidebar color" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified the sidebar color" />
+    <MESSAGE value="modified the frontend deploy script" />
+    <option name="LAST_COMMIT_MESSAGE" value="modified the frontend deploy script" />
   </component>
 </project>
