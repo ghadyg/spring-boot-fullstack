@@ -9,6 +9,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -23,11 +24,14 @@ class CustomerServiceTest {
 
     @Mock
     private CustomerDao customerDao;
+    @Mock
+    private PasswordEncoder passwordEncoder;
     private CustomerService underTest;
+    private final CustomerDTOMapper customerDTOMapper= new CustomerDTOMapper();
 
     @BeforeEach
     void setUp() {
-        underTest = new CustomerService(customerDao);
+        underTest = new CustomerService(customerDao, passwordEncoder, customerDTOMapper);
     }
 
 
@@ -44,13 +48,14 @@ class CustomerServiceTest {
     void canGetCustomer() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22,
+                id,"ghady","ghady@gmail.com", "password", 22,
                 Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 
-        Customer actual = underTest.getCustomer(1);
+        CustomerDTO expected = customerDTOMapper.apply(customer);
+        CustomerDTO actual = underTest.getCustomer(1);
 
-        assertThat(actual).isEqualTo(customer);
+        assertThat(actual).isEqualTo(expected);
 
     }
 
@@ -58,7 +63,7 @@ class CustomerServiceTest {
     void canNotGetCustomer() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22,
+                id,"ghady","ghady@gmail.com", "password", 22,
                 Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.empty());
 
@@ -78,7 +83,7 @@ class CustomerServiceTest {
 
 
         CustomerRegistrationRequest customer = new CustomerRegistrationRequest(
-                "ghady", email,22,Gender.male
+                "ghady", email, "password", 22,Gender.male
         );
 
         assertThatThrownBy(()->underTest.addCustomer(customer))
@@ -98,8 +103,11 @@ class CustomerServiceTest {
 
 
         CustomerRegistrationRequest customer = new CustomerRegistrationRequest(
-                "ghady", email,22,Gender.male
+                "ghady", email, "password", 22,Gender.male
         );
+        String passwordHash= "afsafaf";
+
+        when(passwordEncoder.encode("password")).thenReturn(passwordHash);
 
         underTest.addCustomer(customer);
         ArgumentCaptor<Customer> customerArgumentCaptor = ArgumentCaptor.forClass(
@@ -114,6 +122,7 @@ class CustomerServiceTest {
         assertThat(capturedCustomer.getEmail()).isEqualTo(customer.email());
         assertThat(capturedCustomer.getAge()).isEqualTo(customer.age());
         assertThat(capturedCustomer.getGender()).isEqualTo(Gender.male);
+        assertThat(capturedCustomer.getPassword()).isEqualTo(passwordHash);
 
 
     }
@@ -146,7 +155,7 @@ class CustomerServiceTest {
     void updateCustomer() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22,
+                id,"ghady","ghady@gmail.com", "password", 22,
                 Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 
@@ -175,7 +184,7 @@ class CustomerServiceTest {
     void canNotUpdateCustomerThrowDup() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22,
+                id,"ghady","ghady@gmail.com", "password", 22,
                 Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 
@@ -197,7 +206,7 @@ class CustomerServiceTest {
     void canNotUpdateCustomerNoChanges() {
         Integer id = 1;
         Customer customer = new Customer(
-                id,"ghady","ghady@gmail.com",22,
+                id,"ghady","ghady@gmail.com", "password", 22,
                 Gender.male);
         when(customerDao.selectCustomer(id)).thenReturn(Optional.of(customer));
 

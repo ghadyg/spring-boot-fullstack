@@ -1,6 +1,9 @@
 package com.fullStackCourse.customer;
 
 
+import com.fullStackCourse.jwt.JWTUtil;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,25 +15,32 @@ public class CustomerController {
 
     private final CustomerService customerService;
 
-    public CustomerController(CustomerService customerService) {
+    private final JWTUtil jwtUtil;
+
+    public CustomerController(CustomerService customerService, JWTUtil jwtUtil) {
         this.customerService = customerService;
+        this.jwtUtil = jwtUtil;
     }
 
     @GetMapping
-    public List<Customer> getCustomers()
+    public List<CustomerDTO> getCustomers()
     {
         return customerService.getAllCustomers();
     }
     @GetMapping(path = "{id}")
-    public Customer getCustomer(@PathVariable("id") Integer id)
+    public CustomerDTO getCustomer(@PathVariable("id") Integer id)
     {
         return customerService.getCustomer(id);
     }
 
     @PostMapping
-    public void registerCustomer(@RequestBody CustomerRegistrationRequest customerRegistrationRequest)
+    public ResponseEntity<?> registerCustomer(@RequestBody CustomerRegistrationRequest customerRegistrationRequest)
     {
         customerService.addCustomer(customerRegistrationRequest);
+        String token = jwtUtil.issueToken(customerRegistrationRequest.email(), "ROLE_USER");
+        return ResponseEntity.ok()
+                .header(HttpHeaders.AUTHORIZATION,token).build();
+
     }
 
     @DeleteMapping(path = "{id}")

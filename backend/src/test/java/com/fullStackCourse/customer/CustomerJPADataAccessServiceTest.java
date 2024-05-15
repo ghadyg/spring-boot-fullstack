@@ -53,7 +53,7 @@ class CustomerJPADataAccessServiceTest extends AbstractTestcontainer {
         Customer customer = new Customer(
                 faker.name().fullName(),
                 email,
-                20,
+                "password", 20,
                 Gender.male
         );
 
@@ -85,7 +85,7 @@ class CustomerJPADataAccessServiceTest extends AbstractTestcontainer {
         Customer customer = new Customer(
                 faker.name().fullName(),
                 email,
-                20,
+                "password", 20,
                 Gender.male
         );
 
