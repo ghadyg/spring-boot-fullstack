@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="changed the sidebar color">
-      <change afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/security/CorsConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/.env" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/config/WebMvcConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJPADataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJPADataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerListDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerListDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRegistrationRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRegistrationRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRowMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerRowMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V1__Initial_Setup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V2__ALTER_CUSTOMER.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/resources/db/migration/V3__ADD_COLUMN_GENDER.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJPADataAccessServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRepositoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRepositoryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRowMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerRowMapperTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="Adding Security to the api" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -256,7 +228,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715503089712</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Adding Security to the api">
+      <option name="closed" value="true" />
+      <created>1715793312976</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1715793312976</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -267,6 +247,7 @@
     <MESSAGE value="Modified the sidebar color" />
     <MESSAGE value="modified the frontend deploy script" />
     <MESSAGE value="changed the sidebar color" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed the sidebar color" />
+    <MESSAGE value="Adding Security to the api" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding Security to the api" />
   </component>
 </project>
