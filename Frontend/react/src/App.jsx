@@ -1,10 +1,9 @@
-import Profile from "./Profile.jsx"
 import {Drawer, DrawerFooter, Spinner,Text,Wrap, WrapItem } from '@chakra-ui/react'
 import SidebarWithHeader from "./Components/shared/SideBar.jsx"
 import {useEffect,useState} from 'react'
 import {getCustomers} from "./services/client.js"
-import CardWithImage from "./Components/Card.jsx"
-import DrawerForm from "./Components/DrawerForm.jsx"
+import CardWithImage from "./Components/customer/Card.jsx"
+import DrawerForm from "./Components/customer/DrawerForm.jsx"
 import { errorNotification } from "./services/notification.js"
 
 
@@ -18,7 +17,7 @@ function App() {
   const fetchCustomers =()=>{
     getCustomers().then(res=>{
       setCustomer(res.data)
-    }).catch(e=>{
+    }).catch(err=>{
       setError(err.response.data.message)
       errorNotification(
         err.code,

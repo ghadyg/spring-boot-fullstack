@@ -30,6 +30,8 @@ import {
   FiBell,
   FiChevronDown,
 } from 'react-icons/fi';
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const LinkItems = [
   { name: 'Home', icon: FiHome },
@@ -81,7 +83,7 @@ function SidebarContent({ onClose, ...rest }) {
       {...rest}>
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          Logo
+          Dashboard
         </Text>
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
@@ -126,6 +128,8 @@ function NavItem({ icon, children, ...rest }) {
 }
 
 function MobileNav({ onOpen, ...rest }) {
+  const {customer,logout} =  useAuth();
+  const navigate = useNavigate();
   return (
     <Flex
       ml={{ base: 0, md: 60 }}
@@ -178,10 +182,13 @@ function MobileNav({ onOpen, ...rest }) {
                   alignItems="flex-start"
                   spacing="1px"
                   ml="2">
-                  <Text fontSize="sm">Justina Clark</Text>
-                  <Text fontSize="xs" color="gray.600">
-                    Admin
+                  <Text fontSize="sm">{customer?.username}</Text>
+                  {customer?.roles.map((role,i) => (
+                  <Text fontSize="xs" color="gray.600" key={i}>
+                      {role}
                   </Text>
+                    ))}
+                  
                 </VStack>
                 <Box display={{ base: 'none', md: 'flex' }}>
                   <FiChevronDown />
@@ -195,7 +202,9 @@ function MobileNav({ onOpen, ...rest }) {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+              <MenuItem onClick={()=>{logout();
+                navigate("/");
+              }}>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>

@@ -20,8 +20,8 @@ import {
   useDisclosure
   } from '@chakra-ui/react';
 import { useRef } from 'react';
-import {deleteCustomer} from '../services/client'
-import {successNotification,errorNotification} from '../services/notification'
+import {deleteCustomer} from '../../services/client'
+import {successNotification,errorNotification} from '../../services/notification'
 import UpdateDrawerForm from './UpdateDrawerForm';
   
   
