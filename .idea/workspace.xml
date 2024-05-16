@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="Removing security from the ping endpoint">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/Card.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/CreateCustomerForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/DrawerForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/UpdateCustomerForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/UpdateDrawerForm.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/shared/SideBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Profile.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/services/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/services/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/security/CorsConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/security/CorsConfig.java" afterDir="false" />
-    </list>
+    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="Removing security from the ping endpoint" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

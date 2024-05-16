@@ -200,7 +200,6 @@ function MobileNav({ onOpen, ...rest }) {
               borderColor={useColorModeValue('gray.200', 'gray.700')}>
               <MenuItem>Profile</MenuItem>
               <MenuItem>Settings</MenuItem>
-              <MenuItem>Billing</MenuItem>
               <MenuDivider />
               <MenuItem onClick={()=>{logout();
                 navigate("/");
