@@ -3,7 +3,7 @@
   "containerDefinitions": [
     {
       "name": "demo-react",
-      "image": "ghady22/demo-react:15.05.2024.17.27.26",
+      "image": "ghady22/demo-react:16.05.2024.17.07.37",
       "essential": true,
       "memory": 256,
       "portMappings": [
