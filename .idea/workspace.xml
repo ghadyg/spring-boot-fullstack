@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="Removing security from the ping endpoint" />
+    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="removing sidebar link">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/Login/Login.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/context/AuthContext.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/context/AuthContext.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/customer/CreateCustomerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/customer/CreateCustomerForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/customer/DrawerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/customer/DrawerForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/main.jsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -244,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1715794661233</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="removing sidebar link">
+      <option name="closed" value="true" />
+      <created>1715879245407</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1715879245407</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -257,6 +272,7 @@
     <MESSAGE value="changed the sidebar color" />
     <MESSAGE value="Adding Security to the api" />
     <MESSAGE value="Removing security from the ping endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removing security from the ping endpoint" />
+    <MESSAGE value="removing sidebar link" />
+    <option name="LAST_COMMIT_MESSAGE" value="removing sidebar link" />
   </component>
 </project>
