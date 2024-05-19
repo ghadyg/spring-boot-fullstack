@@ -93,7 +93,7 @@ const MyTextInput = ({ label, ...props }) => {
     const navigate = useNavigate();
     useEffect(()=>{
       if(customer){
-        navigate("/dashboard");
+        navigate("/dashboard/customer");
       }
     })
     return (

@@ -29,16 +29,15 @@ import {
   FiMenu,
   FiBell,
   FiChevronDown,
+  FiUser,
 } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
 const LinkItems = [
-  { name: 'Home', icon: FiHome },
-  { name: 'Trending', icon: FiTrendingUp },
-  { name: 'Explore', icon: FiCompass },
-  { name: 'Favourites', icon: FiStar },
-  { name: 'Settings', icon: FiSettings },
+  { name: 'Home', route:'/dashboard', icon: FiHome },
+  { name: 'Customers',route:'/dashboard/customer', icon: FiUser },
+  { name: 'Settings',route:'/dashboard/settings', icon: FiSettings }
 ];
 
 export default function SidebarWithHeader({ children }) {
@@ -88,7 +87,7 @@ function SidebarContent({ onClose, ...rest }) {
         <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem key={link.name} linkName={link.route} icon={link.icon}>
           {link.name}
         </NavItem>
       ))}
@@ -96,9 +95,9 @@ function SidebarContent({ onClose, ...rest }) {
   );
 }
 
-function NavItem({ icon, children, ...rest }) {
+function NavItem({ icon,linkName ,children, ...rest }) {
   return (
-   // <Link href="#" style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
+    <Link href={`${linkName}`} style={{ textDecoration: 'none' }} _focus={{ boxShadow: 'none' }}>
       <Flex
         align="center"
         p="4"
@@ -123,7 +122,7 @@ function NavItem({ icon, children, ...rest }) {
         )}
         {children}
       </Flex>
-   // </Link>
+    </Link>
   );
 }
 

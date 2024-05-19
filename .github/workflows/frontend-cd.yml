@@ -9,7 +9,8 @@ on:
     branches:
       - main
 jobs:
-  build:
+  deploy:
+    if: false
     runs-on: ubuntu-latest
     defaults:
       run:
