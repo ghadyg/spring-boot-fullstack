@@ -36,7 +36,7 @@ export default function Signup() {
             <CreateCustomerForm onSuccess={(token)=>{
                 localStorage.setItem("access_token",token);
                 setCustomerFromToken();
-                navigate("/dashboard");
+                navigate("/dashboard/customer");
                 }}/>
             <Link color={"blue.500"} href='/'>Have an account? Login now.</Link>
           </Stack>
