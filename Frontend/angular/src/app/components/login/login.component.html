@@ -1,0 +1,49 @@
+<div class="flex" style="height: 100vh;">
+    <div class="col-6 m-3 flex flex-column justify-content-center" >
+        <div class="m-auto">
+        <div class="text-center">
+            <h1>Sign in to your account</h1>
+        </div>
+        <p-messages [(value)]="message" />
+        <div class="field">
+            <label for="Email">Email</label>
+            <input
+            id="Email"
+            pInputText
+            placeholder="Jane@gmail.com"
+            [(ngModel)]="authentication.username"
+            type="email"
+            class="w-full"
+            /> 
+         </div>
+         <div class="field">
+            <label for="password">Passowrd</label>
+            <input
+            id="password"
+            pInputText
+            placeholder=""
+            [(ngModel)]="authentication.password"
+            type="password"
+            class="w-full"
+            /> 
+        </div>
+        
+        <button pButton label="Submit" class="w-full"
+        (click)="login()"
+        ></button>
+        <button pButton
+        class="w-full p-button-link pl-0 text-left"
+        label="Don't have an account? Signup now"
+        (click)="SignUp()"
+        ></button>
+        </div>
+    </div>
+    <div class="col-6 flex flex-column justify-content-center align-items-center right-container" >
+        <h1>
+            <a href='https://github.com/ghadyg' target="_blank">Checkout my github</a>
+        </h1>
+        <img src='https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80'
+        class="background p-6 pt-0"
+        />
+    </div>
+</div>

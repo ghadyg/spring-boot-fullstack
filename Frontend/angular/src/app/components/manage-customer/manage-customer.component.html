@@ -1,0 +1,68 @@
+<div>
+    <h2>{{title}}</h2>
+    <div class="field">
+       <label for="firstName">Name</label>
+       <input
+       [(ngModel)]="customer.name"
+       id="firstName"
+       pInputText
+       placeholder="Jane"
+       type="text"
+       class="w-full"
+       /> 
+    </div>
+    <div class="field">
+        <label for="Email">Email</label>
+        <input
+        [(ngModel)]="customer.email"
+        id="Email"
+        pInputText
+        placeholder="Jane@gmail.com"
+        type="email"
+        class="w-full"
+        autoComplete='new-password'
+        /> 
+     </div>
+     <div class="field" *ngIf="operation==='create'">
+        <label for="password">Passowrd</label>
+        <input
+        [(ngModel)]="customer.password"
+        id="password"
+        pInputText
+        placeholder=""
+        type="password"
+        class="w-full"
+        autoComplete='new-password'
+        /> 
+    </div>
+    <div class="field">
+            <label for="age">Age</label>
+            <input
+            [(ngModel)]="customer.age"
+            id="age"
+            pInputText
+            placeholder="22"
+            type="number"
+            class="w-full"
+            />
+     </div>
+    <div class="field" *ngIf="operation==='create'">
+        <label for="gender">Gender</label>
+        <select 
+        [(ngModel)]="customer.gender"
+        id="gender" class="p-dropdown w-full custom-select">
+            <option value="">Select a Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+    </div>
+    <button pButton label="Submit" class="w-full" 
+    [disabled]="!isCustomerValid"
+    (click)="onSubmit()"
+    ></button>
+    <button pButton label="Cancel" 
+    class="w-full p-button-outlined p-button-danger mt-2"
+    (click)="onCancel()">
+    </button>
+    
+</div>
