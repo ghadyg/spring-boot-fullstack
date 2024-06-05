@@ -4,12 +4,18 @@ import com.fullStackCourse.AbstractTestcontainer;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.UUID;
 
-import static org.mockito.Mockito.verify;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.*;
 
 class CustomerJPADataAccessServiceTest extends AbstractTestcontainer {
 
@@ -31,10 +37,17 @@ class CustomerJPADataAccessServiceTest extends AbstractTestcontainer {
 
     @Test
     void selectAllCustomers() {
-        underTest.selectAllCustomers();
+        Page<Customer> page = mock(Page.class);
+        List<Customer> customers = List.of(new Customer());
+        when(page.getContent()).thenReturn(customers);
+        when(customerRepository.findAll(any(Pageable.class))).thenReturn(page);
 
-        verify(customerRepository)
-                .findAll();
+        List<Customer> expected = underTest.selectAllCustomers();
+
+        assertThat(expected).isEqualTo(customers);
+        ArgumentCaptor<Pageable> pageableArgumentCaptor = ArgumentCaptor.forClass(Pageable.class);
+        verify(customerRepository).findAll(pageableArgumentCaptor.capture());
+        assertThat(pageableArgumentCaptor.getValue()).isEqualTo(Pageable.ofSize(1000));
     }
 
     @Test
@@ -101,5 +114,17 @@ class CustomerJPADataAccessServiceTest extends AbstractTestcontainer {
         underTest.deleteCustomer(id);
 
         verify(customerRepository).deleteById(id);
+    }
+
+    @Test
+    void canUpdateProfile()
+    {
+        String profileId = "222";
+
+        Integer customerid = 1;
+
+        underTest.updateCustomerProfileImageId(profileId,customerid);
+
+        verify(customerRepository).setProfileImageId(profileId,customerid);
     }
 }

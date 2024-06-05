@@ -1,6 +1,8 @@
 package com.fullStackCourse.customer;
 
 import com.fullStackCourse.Exception.ResourceNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,7 +19,8 @@ public class CustomerJPADataAccessService implements CustomerDao {
 
     @Override
     public List<Customer> selectAllCustomers() {
-        return customerRepository.findAll();
+        Page<Customer> customerPage = customerRepository.findAll(Pageable.ofSize(1000));
+        return customerPage.getContent();
     }
 
     @Override
@@ -50,6 +53,11 @@ public class CustomerJPADataAccessService implements CustomerDao {
     @Override
     public Optional<Customer> selectUserByEmail(String email) {
         return customerRepository.findCustomerByEmail(email);
+    }
+
+    @Override
+    public void updateCustomerProfileImageId(String profileId, Integer customerId) {
+        customerRepository.setProfileImageId(profileId,customerId);
     }
 
     @Override

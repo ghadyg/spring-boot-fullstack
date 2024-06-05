@@ -9,6 +9,7 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.verify;
 
 class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainer {
 
@@ -241,6 +242,31 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainer {
             assertThat(c.getAge()).isEqualTo(newAge);
 
         });
+
+    }
+
+    @Test
+    void canUpdateProfile()
+    {
+        int id =1;
+        String email = faker.internet().safeEmailAddress() + "-" + UUID.randomUUID();
+        Customer customer = new Customer(
+                faker.name().fullName(),
+                email,
+                "password", 20,
+                Gender.male
+        );
+        underTest.insertCustomer(customer);
+
+
+        underTest.updateCustomerProfileImageId("2222",id);
+
+        Optional<Customer> result = underTest.selectCustomer(id);
+        assertThat(result).isPresent().hasValueSatisfying(
+                c->{
+                    assertThat(c.getProfileImageId()).isEqualTo("2222");
+                }
+        );
 
     }
 }
