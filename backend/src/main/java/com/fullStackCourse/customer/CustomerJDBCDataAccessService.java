@@ -24,7 +24,6 @@ public class CustomerJDBCDataAccessService implements CustomerDao{
                 Select id,name,email,password,age,gender,profile_image_id
                 from customer
                 order by id asc
-                LIMIT 100
                 """;
 
         List<Customer> customers = jdbcTemplate.query(sql, customerRowMapper);

@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="s3 commits">
+    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="s3 frontend commits">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/customer/Card.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/customer/Card.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/customer/CreateCustomerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/customer/CreateCustomerForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/customer/DrawerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/customer/DrawerForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/customer/UpdateCustomerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/customer/UpdateCustomerForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Components/customer/UpdateDrawerForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Components/customer/UpdateDrawerForm.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Customer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Customer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Frontend/react/src/services/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/services/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/security/SecurityFilterChainConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/security/SecurityFilterChainConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +83,7 @@
       <recent name="com.fullStackCourse.s3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.CustomerIntegrationTest.canUploadandDownlaodProfile">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="spring.profiles.active" value="default" />
@@ -181,8 +171,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.CustomerIntegrationTest.canUploadandDownlaodProfile" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.S3ServiceTest.putObject" />
         <item itemvalue="JUnit.CustomerIntegrationTest.canUploadProfile" />
         <item itemvalue="JUnit.fullStackCourse in demo" />
@@ -326,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717603637973</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="s3 frontend commits">
+      <option name="closed" value="true" />
+      <created>1717836006063</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717836006063</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -344,7 +342,8 @@
     <MESSAGE value="exposing health metrics" />
     <MESSAGE value="angular" />
     <MESSAGE value="s3 commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="s3 commits" />
+    <MESSAGE value="s3 frontend commits" />
+    <option name="LAST_COMMIT_MESSAGE" value="s3 frontend commits" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FullStackCourse$CustomerServiceTest.ic" NAME="CustomerServiceTest Coverage Results" MODIFIED="1717415631400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
