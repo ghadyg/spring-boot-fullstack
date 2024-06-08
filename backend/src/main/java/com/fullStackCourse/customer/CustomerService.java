@@ -97,6 +97,10 @@ public class CustomerService {
         customerDao.updateCustomer(customer);
 
     }
+    public List<CustomerDTO> selectAPageOfCustomer(Integer pageSize,Integer offset){
+            return  customerDao.selectAPageOfCustomer(pageSize,offset)
+                    .stream().map(customerDTOMapper).collect(Collectors.toList());
+    }
 
     public void uploadCustomerImage(Integer id, MultipartFile file) {
         if(!customerDao.existsPersonWithId(id))

@@ -7,6 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import software.amazon.awssdk.services.s3.endpoints.internal.Value;
 
 import java.util.List;
 
@@ -33,6 +34,12 @@ public class CustomerController {
     public CustomerDTO getCustomer(@PathVariable("id") Integer id)
     {
         return customerService.getCustomer(id);
+    }
+
+    @GetMapping("/Page")
+    public List<CustomerDTO> selectAPageOfCustomer(@RequestParam("pageSize") Integer pageSize, @RequestParam("offset") Integer offset)
+    {
+        return customerService.selectAPageOfCustomer(pageSize,offset);
     }
 
     @PostMapping

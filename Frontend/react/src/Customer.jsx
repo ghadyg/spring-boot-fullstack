@@ -1,52 +1,40 @@
 import {Drawer, DrawerFooter, Spinner,Text,Wrap, WrapItem } from '@chakra-ui/react'
 import SidebarWithHeader from "./Components/shared/SideBar.jsx"
-import {useEffect,useState} from 'react'
+import {useEffect,useState,useCallback,useRef} from 'react'
 import {getCustomers, getProfilePicture} from "./services/client.js"
 import CardWithImage from "./Components/customer/Card.jsx"
 import DrawerForm from "./Components/customer/DrawerForm.jsx"
 import { errorNotification } from "./services/notification.js"
+import useCustomer from './useCustomer.js'
 
 
 
 function Customer() {
 
-  const [customers,setCustomer] = useState([]);
-  const [loading,setLoading] = useState(false);
-  const [err,setError] = useState("")
+  const observer = useRef();
 
+  const pageSize = 10;
+  const [offset,setOffset] = useState(0)
+
+  //const [customers,setCustomer] = useState([]);
   const fetchCustomers =()=>{
-    setLoading(true);
-    getCustomers().then(res=>{  
-      setCustomer(res.data)
-    }).catch(err=>{
-      setError(err.response.data.message)
-      errorNotification(
-        err.code,
-        err.response.data.message
-      )
-    })
-    .finally(()=>{
-      setLoading(false)
-    }
-  )
+    setOffset(0);
   }
-  useEffect(()=>{
-    fetchCustomers();
-  },[])
+  // useEffect(()=>{
+  //   fetchCustomers();
+  // },[])
 
-  if(loading){
-    return(
-      <SidebarWithHeader>
-              <Spinner
-        thickness='4px'
-        speed='0.65s'
-        emptyColor='gray.200'
-        color='blue.500'
-        size='xl'
-      />
-      </SidebarWithHeader>
-    )
-  }
+  const{customers,isLoading,hasMore,err} = useCustomer({pageSize,offset});
+  const fetchAnotherPage = useCallback((node)=>{
+        if(isLoading) return;
+        if(observer.current) observer.current.disconnect();
+        observer.current = new IntersectionObserver((entries)=>{
+          if(entries[0].isIntersecting && hasMore)
+            setOffset(offset=>offset+1);          
+        }
+      )
+      if(node) observer.current.observe(node)
+    },[isLoading,hasMore])
 
   if(err)
   {
@@ -73,14 +61,44 @@ function Customer() {
       <Wrap justify={"center"} spacing={"30px"}>
         {customers.map((c,i)=>
        {
-        return(
-          <WrapItem key={i}>
-          <CardWithImage {...c}
-                  fetchCustomers={fetchCustomers}
-          ></CardWithImage>
-          </WrapItem>
-        )})}
+        if(i+1 === customers.length)
+          {
+            return(
+              <div ref={fetchAnotherPage} key={i}>
+              <WrapItem>
+              <CardWithImage {...c}
+                      fetchCustomers={fetchCustomers}
+              ></CardWithImage>
+              </WrapItem>
+              </div>
+            )
+          }
+          else
+          {
+            return(
+              <WrapItem key={i}>
+              <CardWithImage {...c}
+                      fetchCustomers={fetchCustomers}
+              ></CardWithImage>
+              </WrapItem>
+            )
+      }
+        
+        })}
         </Wrap>
+        { isLoading && 
+      <SidebarWithHeader>
+              <Spinner
+        thickness='4px'
+        speed='0.65s'
+        emptyColor='gray.200'
+        color='blue.500'
+        size='xl'
+      />
+      </SidebarWithHeader>
+      }
+    
+  
     </SidebarWithHeader>
 
         

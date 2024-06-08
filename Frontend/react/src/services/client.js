@@ -18,6 +18,21 @@ export const getCustomers = async () =>{
     }
 }
 
+export const getPageOfCustomer = async(pageSize,offset,cancelToken)=>{
+    try
+    {
+        return await axios
+        .get(`${import.meta.env.VITE_API_BASE_URL}/api/v1/customers/Page?pageSize=${pageSize}&offset=${offset}`
+            ,{
+                ...getAuthConfig(),
+                cancelToken: cancelToken.token,
+            }
+        )
+    }catch(e){
+        throw e
+    }
+}
+
 export const saveCustomer = async(customer)=>{
     // eslint-disable-next-line no-useless-catch
     try{

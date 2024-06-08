@@ -4,10 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="s3 frontend commits">
+    <list default="true" id="1a550349-0bb1-48ce-af0d-f2739aacf662" name="Changes" comment="fix test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/Customer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/Customer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Frontend/react/src/services/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/Frontend/react/src/services/client.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJDBCDataAccessService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/journey/CustomerIntegrationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJPADataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerJPADataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerListDataAccessService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerListDataAccessService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main/java/com/fullStackCourse/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJDBCDataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJDBCDataAccessServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJPADataAccessServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse/customer/CustomerJPADataAccessServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,7 +91,7 @@
       <recent name="com.fullStackCourse.s3" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CustomerIntegrationTest.canUploadandDownlaodProfile">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <envs>
         <env name="spring.profiles.active" value="default" />
@@ -100,58 +108,66 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerIntegrationTest.canUploadProfile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerJDBCDataAccessServiceTest.selectAPageOfCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fullStackCourse.journey.*" />
+          <option name="PATTERN" value="com.fullStackCourse.customer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.fullStackCourse.journey" />
-      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.journey.CustomerIntegrationTest" />
-      <option name="METHOD_NAME" value="canUploadProfile" />
+      <option name="PACKAGE_NAME" value="com.fullStackCourse.customer" />
+      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.customer.CustomerJDBCDataAccessServiceTest" />
+      <option name="METHOD_NAME" value="selectAPageOfCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerIntegrationTest.canUploadandDownlaodProfile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerJDBCDataAccessServiceTest.selectAPageOfCustomerWithNoCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fullStackCourse.journey.*" />
+          <option name="PATTERN" value="com.fullStackCourse.customer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.fullStackCourse.journey" />
-      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.journey.CustomerIntegrationTest" />
-      <option name="METHOD_NAME" value="canUploadandDownlaodProfile" />
+      <option name="PACKAGE_NAME" value="com.fullStackCourse.customer" />
+      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.customer.CustomerJDBCDataAccessServiceTest" />
+      <option name="METHOD_NAME" value="selectAPageOfCustomerWithNoCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="S3ServiceTest.putObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerJPADataAccessServiceTest.selectAPageOfCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.fullStackCourse.s3.*" />
+          <option name="PATTERN" value="com.fullStackCourse.customer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.fullStackCourse.s3" />
-      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.s3.S3ServiceTest" />
-      <option name="METHOD_NAME" value="putObject" />
+      <option name="PACKAGE_NAME" value="com.fullStackCourse.customer" />
+      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.customer.CustomerJPADataAccessServiceTest" />
+      <option name="METHOD_NAME" value="selectAPageOfCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="fullStackCourse in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerJPADataAccessServiceTest.selectAllCustomers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/backend/src/test/java/com/fullStackCourse" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.fullStackCourse.customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.fullStackCourse.customer" />
+      <option name="MAIN_CLASS_NAME" value="com.fullStackCourse.customer.CustomerJPADataAccessServiceTest" />
+      <option name="METHOD_NAME" value="selectAllCustomers" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,18 +180,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.CustomerIntegrationTest.canUploadandDownlaodProfile" />
-      <item itemvalue="JUnit.CustomerIntegrationTest.canUploadProfile" />
-      <item itemvalue="JUnit.fullStackCourse in demo" />
-      <item itemvalue="JUnit.S3ServiceTest.putObject" />
+      <item itemvalue="JUnit.CustomerJDBCDataAccessServiceTest.selectAPageOfCustomer" />
+      <item itemvalue="JUnit.CustomerJDBCDataAccessServiceTest.selectAPageOfCustomerWithNoCustomer" />
+      <item itemvalue="JUnit.CustomerJPADataAccessServiceTest.selectAPageOfCustomer" />
+      <item itemvalue="JUnit.CustomerJPADataAccessServiceTest.selectAllCustomers" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CustomerIntegrationTest.canUploadandDownlaodProfile" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.S3ServiceTest.putObject" />
-        <item itemvalue="JUnit.CustomerIntegrationTest.canUploadProfile" />
-        <item itemvalue="JUnit.fullStackCourse in demo" />
+        <item itemvalue="JUnit.CustomerJDBCDataAccessServiceTest.selectAPageOfCustomerWithNoCustomer" />
+        <item itemvalue="JUnit.CustomerJDBCDataAccessServiceTest.selectAPageOfCustomer" />
+        <item itemvalue="JUnit.CustomerJPADataAccessServiceTest.selectAPageOfCustomer" />
+        <item itemvalue="JUnit.CustomerJPADataAccessServiceTest.selectAllCustomers" />
       </list>
     </recent_temporary>
   </component>
@@ -324,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717836006063</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fix test">
+      <option name="closed" value="true" />
+      <created>1717836297462</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1717836297462</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -343,7 +367,8 @@
     <MESSAGE value="angular" />
     <MESSAGE value="s3 commits" />
     <MESSAGE value="s3 frontend commits" />
-    <option name="LAST_COMMIT_MESSAGE" value="s3 frontend commits" />
+    <MESSAGE value="fix test" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix test" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FullStackCourse$CustomerServiceTest.ic" NAME="CustomerServiceTest Coverage Results" MODIFIED="1717415631400" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

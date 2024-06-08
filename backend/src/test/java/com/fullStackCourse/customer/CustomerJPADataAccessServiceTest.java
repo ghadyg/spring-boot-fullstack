@@ -9,8 +9,10 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -37,17 +39,39 @@ class CustomerJPADataAccessServiceTest extends AbstractTestcontainer {
 
     @Test
     void selectAllCustomers() {
-        Page<Customer> page = mock(Page.class);
-        List<Customer> customers = List.of(new Customer());
-        when(page.getContent()).thenReturn(customers);
-        when(customerRepository.findAll(any(Pageable.class))).thenReturn(page);
 
-        List<Customer> expected = underTest.selectAllCustomers();
+        underTest.selectAllCustomers();
+
+        verify(customerRepository).findAll();
+
+
+    }
+
+    @Test
+    void selectAPageOfCustomer() {
+        int pageSize = 100;
+        int offset = 0;
+
+        Customer customer = new Customer(
+                faker.name().fullName(),
+                faker.internet().safeEmailAddress() + "-" + UUID.randomUUID(),
+                "password", 20,
+                Gender.male
+        );
+
+
+        List<Customer> customers = List.of(customer);
+        Page pageMock = mock(Page.class);
+
+        when(pageMock.getContent()).thenReturn(customers);
+        when(customerRepository.findAll(any(Pageable.class))).thenReturn(pageMock);
+
+        List<Customer> expected = underTest.selectAPageOfCustomer(pageSize,offset);
 
         assertThat(expected).isEqualTo(customers);
         ArgumentCaptor<Pageable> pageableArgumentCaptor = ArgumentCaptor.forClass(Pageable.class);
         verify(customerRepository).findAll(pageableArgumentCaptor.capture());
-        assertThat(pageableArgumentCaptor.getValue()).isEqualTo(Pageable.ofSize(1000));
+        assertThat(pageableArgumentCaptor.getValue()).isEqualTo(Pageable.ofSize(pageSize));
     }
 
     @Test

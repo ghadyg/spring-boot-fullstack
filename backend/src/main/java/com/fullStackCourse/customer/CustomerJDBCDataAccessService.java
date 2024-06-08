@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Repository("jdbc")
@@ -108,5 +109,18 @@ public class CustomerJDBCDataAccessService implements CustomerDao{
                 where id = ?
                 """;
         jdbcTemplate.update(sql,profileId,customerId);
+    }
+
+    @Override
+    public List<Customer> selectAPageOfCustomer(Integer pageSize,Integer offset) {
+        var sql = """
+                Select * from Customer
+                order by id
+                LIMIT ?
+                offset ?
+                """;
+
+        Integer PageOffset = pageSize * (offset);
+        return jdbcTemplate.query(sql, customerRowMapper, pageSize, PageOffset);
     }
 }

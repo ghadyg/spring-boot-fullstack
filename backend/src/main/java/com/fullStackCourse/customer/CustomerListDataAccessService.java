@@ -76,4 +76,9 @@ public class CustomerListDataAccessService implements CustomerDao {
     public void updateCustomerProfileImageId(String profileId, Integer customerId) {
 
     }
+
+    @Override
+    public List<Customer> selectAPageOfCustomer(Integer pageSize,Integer Offset) {
+        return null;
+    }
 }

@@ -16,4 +16,6 @@ public interface CustomerDao {
     void updateCustomer(Customer customer);
     Optional<Customer> selectUserByEmail(String email);
     void updateCustomerProfileImageId(String profileId, Integer customerId);
+
+    List<Customer> selectAPageOfCustomer(Integer pageSize,Integer Offset);
 }

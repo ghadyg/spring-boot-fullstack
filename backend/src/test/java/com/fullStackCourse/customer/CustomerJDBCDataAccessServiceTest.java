@@ -3,6 +3,8 @@ package com.fullStackCourse.customer;
 import com.fullStackCourse.AbstractTestcontainer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +39,39 @@ class CustomerJDBCDataAccessServiceTest extends AbstractTestcontainer {
         underTest.insertCustomer(customer);
         List<Customer> customers = underTest.selectAllCustomers();
         assertThat(customers).isNotEmpty();
+
+    }
+    @Test
+    void selectAPageOfCustomer() {
+        int offset = 0;
+        int pageSize = 10;
+
+        Customer customer = new Customer(
+                faker.name().fullName(),
+                faker.internet().safeEmailAddress()+"-"+ UUID.randomUUID(),
+                "password", 20,
+                Gender.male
+        );
+        underTest.insertCustomer(customer);
+        List<Customer> customers = underTest.selectAPageOfCustomer(pageSize,offset);
+        assertThat(customers).isNotEmpty();
+
+    }
+
+    @Test
+    void selectAPageOfCustomerWithNoCustomer() {
+        int offset = 1;
+        int pageSize = 10;
+
+        Customer customer = new Customer(
+                faker.name().fullName(),
+                faker.internet().safeEmailAddress()+"-"+ UUID.randomUUID(),
+                "password", 20,
+                Gender.male
+        );
+        underTest.insertCustomer(customer);
+        List<Customer> customers = underTest.selectAPageOfCustomer(pageSize,offset);
+        assertThat(customers).isEmpty();
 
     }
 
