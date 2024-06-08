@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-catch */
 import axios from "axios";
 
 const getAuthConfig= () =>({
@@ -18,6 +19,7 @@ export const getCustomers = async () =>{
 }
 
 export const saveCustomer = async(customer)=>{
+    // eslint-disable-next-line no-useless-catch
     try{
         return await axios
         .post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/customers`,
@@ -63,3 +65,22 @@ export const UpdateCustomer = async(customer,id)=>{
         throw e
     }
 }
+
+export const uploadCustomerProfile = async(id,formData)=>{
+    try{
+        return axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/v1/customers/${id}/profile-image`,
+            formData,{
+                ...getAuthConfig(),
+                'Content-Type': 'multipart/form-data'
+            }
+        )
+            
+    }catch(e){
+        throw e
+    }
+}
+
+export const getProfilePicture = (id)=>{
+    return `${import.meta.env.VITE_API_BASE_URL}/api/v1/customers/${id}/profile-image`
+}
+

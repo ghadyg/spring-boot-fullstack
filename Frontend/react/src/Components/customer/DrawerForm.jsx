@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import {
     Button,
     Drawer,
@@ -7,9 +8,7 @@ import {
     DrawerOverlay,
     DrawerContent,
     DrawerCloseButton,
-    useDisclosure,
-    Input
-  } from '@chakra-ui/react'
+    useDisclosure  } from '@chakra-ui/react'
 import CreateCustomerForm from './CreateCustomerForm';
 
 const AddIcon = ()=> "+";

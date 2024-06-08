@@ -1,9 +1,11 @@
-import React from 'react';
+/* eslint-disable react/jsx-no-undef */
+/* eslint-disable react/prop-types */
+import React, {useCallback,useState,useEffect} from 'react'
+import {useDropzone} from 'react-dropzone'
 import { Formik, Form, useField } from 'formik';
 import * as Yup from 'yup';
-import { Alert, AlertIcon, Box, Button, FormLabel, Input, Select, Stack } from '@chakra-ui/react';
-import { px } from 'framer-motion';
-import { UpdateCustomer, saveCustomer } from '../../services/client';
+import { Alert, AlertIcon, Box, Button, FormLabel, Input, Select, Stack, VStack,Image } from '@chakra-ui/react';
+import { UpdateCustomer, getProfilePicture, uploadCustomerProfile } from '../../services/client';
 import { errorNotification, successNotification } from '../../services/notification';
 
 const MyTextInput = ({ label, ...props }) => {
@@ -43,10 +45,62 @@ const MySelect = ({ label, ...props }) => {
   );
 };
 
+
+const MyDropzone = ({id,fetchCustomers,onClose})=> {
+  const onDrop = useCallback(acceptedFiles => {
+    const formdata = new FormData();
+    formdata.append('file',acceptedFiles[0])
+    
+      uploadCustomerProfile(
+        id,formdata
+      ).then((res)=>
+      {
+        successNotification("success","Profile successfully updated");
+        fetchCustomers();
+        onClose();
+      }).catch((err)=>{
+        console.log(objectUrl)
+        errorNotification("Error","Failed to upload Image");
+      })
+  }, [])
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+
+  return (
+    <Box {...getRootProps()}
+      width={'100%'}
+      textAlign={'center'}
+      border={'dashed'}
+      borderColor={'gray.200'}
+      borderRadius={'3xl'}
+      p={6}
+      rounded={'md'}
+      
+    >
+      <input {...getInputProps()} />
+      {
+        isDragActive ?
+          <p>Drop the files here ...</p> :
+          <p>Drag 'n' drop some files here, or click to select files</p>
+      }
+    </Box>
+  )
+}
+
 // And now we can use these
-const UpdateCustomerForm = ({fetchCustomers,initialValues,customerId}) => {
+const UpdateCustomerForm = ({fetchCustomers,initialValues,customerId,onClose}) => {
+  
   return (
     <>
+      <VStack spacing={'5'} mb={'5'}>
+          <Image
+            borderRadius={'full'}
+            boxSize={'150px'}
+            objectFit={'cover'}
+            src={getProfilePicture(customerId)}
+          />
+          <MyDropzone id={customerId} fetchCustomers={fetchCustomers} onClose={onClose} />
+      </VStack>
+
       <Formik
         initialValues={initialValues}
         validationSchema={Yup.object({
@@ -70,6 +124,7 @@ const UpdateCustomerForm = ({fetchCustomers,initialValues,customerId}) => {
               `${customer.name} was saved`,
             )
             fetchCustomers();
+            onClose();
           }).catch(err=>{
             
             errorNotification(

@@ -1,7 +1,7 @@
 import {Drawer, DrawerFooter, Spinner,Text,Wrap, WrapItem } from '@chakra-ui/react'
 import SidebarWithHeader from "./Components/shared/SideBar.jsx"
 import {useEffect,useState} from 'react'
-import {getCustomers} from "./services/client.js"
+import {getCustomers, getProfilePicture} from "./services/client.js"
 import CardWithImage from "./Components/customer/Card.jsx"
 import DrawerForm from "./Components/customer/DrawerForm.jsx"
 import { errorNotification } from "./services/notification.js"
@@ -15,7 +15,8 @@ function Customer() {
   const [err,setError] = useState("")
 
   const fetchCustomers =()=>{
-    getCustomers().then(res=>{
+    setLoading(true);
+    getCustomers().then(res=>{  
       setCustomer(res.data)
     }).catch(err=>{
       setError(err.response.data.message)
@@ -30,9 +31,7 @@ function Customer() {
   )
   }
   useEffect(()=>{
-    setLoading(true);
     fetchCustomers();
-    
   },[])
 
   if(loading){
@@ -72,13 +71,15 @@ function Customer() {
     <SidebarWithHeader>
       <DrawerForm fetchCustomers={fetchCustomers} />
       <Wrap justify={"center"} spacing={"30px"}>
-        {customers.map((c,i)=>(
+        {customers.map((c,i)=>
+       {
+        return(
           <WrapItem key={i}>
           <CardWithImage {...c}
                   fetchCustomers={fetchCustomers}
           ></CardWithImage>
           </WrapItem>
-        ))}
+        )})}
         </Wrap>
     </SidebarWithHeader>
 

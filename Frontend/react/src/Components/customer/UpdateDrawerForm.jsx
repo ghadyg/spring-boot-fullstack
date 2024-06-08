@@ -37,7 +37,8 @@ const UpdateDrawerForm = ({fetchCustomers,initialValues,customerId}) =>{
             <DrawerBody>
               <UpdateCustomerForm fetchCustomers={fetchCustomers}
               initialValues={initialValues}
-              customerId={customerId}/>
+              customerId={customerId}
+              onClose={onClose}/>
             </DrawerBody>
   
             <DrawerFooter>

@@ -19,8 +19,8 @@ import {
   AlertDialogCloseButton,
   useDisclosure
   } from '@chakra-ui/react';
-import { useRef } from 'react';
-import {deleteCustomer} from '../../services/client'
+import { useEffect, useRef, useState } from 'react';
+import {deleteCustomer, getProfilePicture} from '../../services/client'
 import {successNotification,errorNotification} from '../../services/notification'
 import UpdateDrawerForm from './UpdateDrawerForm';
   
@@ -29,6 +29,9 @@ import UpdateDrawerForm from './UpdateDrawerForm';
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const cancelRef = useRef()
+
+
+    
     return (
       <Center py={6}>
         <Box
@@ -43,7 +46,7 @@ import UpdateDrawerForm from './UpdateDrawerForm';
             h={'120px'}
             w={'full'}
             src={
-              gender ==="male" ? `https://randomuser.me/api/portraits/med/men/${id}.jpg` : `https://randomuser.me/api/portraits/med/women/${id%100}.jpg`
+              getProfilePicture(id)
             }
             objectFit={'cover'}
           />
@@ -51,7 +54,7 @@ import UpdateDrawerForm from './UpdateDrawerForm';
             <Avatar
               size={'xl'}
               src={
-                gender ==="male" ? `https://randomuser.me/api/portraits/med/men/${id}.jpg` : `https://randomuser.me/api/portraits/med/women/${id%100}.jpg` 
+                getProfilePicture(id)
               }
               alt={'Author'}
               css={{
@@ -75,7 +78,8 @@ import UpdateDrawerForm from './UpdateDrawerForm';
                 <UpdateDrawerForm 
                 fetchCustomers={fetchCustomers}
                 initialValues={{name,email,age}}
-                customerId={id}/>
+                customerId={id}
+                />
               </Stack>
             <Stack>
             <Button colorScheme='red' onClick={onOpen}>
