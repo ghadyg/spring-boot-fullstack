@@ -1,45 +1,48 @@
-# spring-boot-fullstack
+# SPRING BOOT
 
-<h1>Getting Started</h1>
-<p>Installing all the necessary packages like PostgreSQL, Flywaydb...</p>
-<p>Creating a docker-compose file to install and run a Postgres container to be used as my database</p>
-<p>Creating my Database inside the Postgres container</p>
-<p>Configuring my application.properties to connect to the Database</p>
+## Getting Started
+- **Install Necessary Packages:** PostgreSQL, FlywayDB, etc.
+- **Docker Setup:** Create a `docker-compose` file to install and run a PostgreSQL container.
+- **Database Creation:** Set up the database inside the PostgreSQL container.
+- **Configuration:** Configure `application.properties` to connect to the database.
 
-<h1>Connecting to the Database</h1>
-<p>Using Flywaydb to create all the needed tables and constraints</p>
-<p>Creating the customer entity</p>
+## Connecting to the Database
+- **FlywayDB:** Use FlywayDB to create all necessary tables and constraints.
+- **Entities:** Create the customer entity.
 
-<h1>Creating an Error Handling Classes</h1>
-<p>Creating an Error Handling Classes that return the correct message and status depending on the error and will be used in the Service and Controller classes</p>
+## Error Handling
+- **Error Handling Classes:** Develop error handling classes that return appropriate messages and statuses based on errors, to be used in the Service and Controller layers.
 
-<h1>Creating the Customer Data Access Service</h1>
-<p>Using JDBC template or JPA to create all the necessary functions to perform CRUD and other operations</p>
-<p>Settings up all the unit tests to test if functions are working as intended</p>
+## Customer Data Access Service
+- **CRUD Operations:** Utilize JDBC Template or JPA to create functions for CRUD operations and other necessary tasks.
+- **Unit Tests:** Set up unit tests to ensure functions work as intended.
 
-<h1>Creating the Customer Service and Controller</h1>
-<p>Setting up the Customer Controller to create all the RestApi necessary that the user can use to retrieve, add, update ... </p>
-<p>Setting up the Customer Service layer to perform the logic necessary to pass the correct data to the Controller layer</p>
-<p>Settings up all the unit tests to test if functions are working as intended</p>
+## Customer Service and Controller
+- **Controller Setup:** Create the Customer Controller to implement all required REST APIs for retrieving, adding, updating, etc.
+- **Service Layer:** Develop the Customer Service layer to handle the logic necessary to provide correct data to the Controller layer.
+- **Unit Tests:** Set up unit tests to ensure functions work as intended.
 
-<h1>Integration Test</h1>
-<p>Creating the Integration Test simulating how the user will use the application and testing how all the layers will function together</p>
+## Integration Tests
+- **Simulated Usage:** Create integration tests to simulate user interaction and test the cooperation of all layers.
 
-<h1>Spring Security</h1>
-<p>Securing the API endpoint by adding and configuring the spring security</p>
-<p>Implementing the JWT as an authentication method</p>
-<p>Creating the Sign-up and Login functions that allow the user to register and log in to use the API</p>
-<p>Adding filters that will allow all the Sign-up requests not to require authentication</p>
-<p>Adding the corresponding functions that will return an authorization token in the login functions and others that will verify the token received from other requests to check its validity</p>
+## Spring Security
+- **API Security:** Secure API endpoints by configuring Spring Security.
+- **JWT Authentication:** Implement JWT for authentication.
+- **User Authentication:** Create sign-up and login functions for user registration and access.
+- **Filters:** Add filters to allow unauthenticated sign-up requests.
+- **Token Management:** Develop functions to return authorization tokens on login and verify tokens from other requests.
 
-<h1>Integrating with Amazon S3 bucket</h1>
-<p>Adding the Configuration to connect to S3 bucket and a fake S3 Bucket(for testing purpose)</p>
-<p>Creating the necessary functions to put and get Objects from the S3 buckets</p>
-<p>Adding a rest Controller that allows the user to add a profile picture to his account</p>
-<p>Settings up all the unit tests to test if functions are working as intended</p>
-<p>Modifying the integration tests to include the testing of the upload and retrieval of the profile pictures</p>
+## Integrating with Amazon S3
+- **Configuration:** Set up connections to S3 buckets, including a fake S3 bucket for testing.
+- **Functions:** Create functions to put and get objects from S3 buckets.
+- **Rest Controller:** Develop a Rest Controller for users to add profile pictures to their accounts.
+- **Unit Tests:** Set up unit tests to ensure functions work as intended.
+- **Integration Tests:** Modify integration tests to include testing for uploading and retrieving profile pictures.
 
-<h1>Creating a Github Workflows</h1>
-<p>Creating a first workflow that on the push will build and verify by running all the unit tests and verify that they all pass</p>
-<p>Creating a second one that will verify that all the integration has passed and after that will package the Spring application inside a dockers container, upload it to DockerHub, and also deploy it to AWS Elastic Bean</p>
- 
+## GitHub Workflows
+- **First Workflow:** Build and verify the project by running all unit tests on push.
+- **Second Workflow:** Verify all integration tests, package the Spring application inside a Docker container, upload it to DockerHub, and deploy to AWS Elastic Beanstalk.
+
+# REACT JS
+
+> Coming soon...
