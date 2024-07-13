@@ -33,5 +33,13 @@
 <p>Adding the corresponding functions that will return an authorization token in the login functions and others that will verify the token received from other requests to check its validity</p>
 
 <h1>Integrating with Amazon S3 bucket</h1>
-<p>Adding the </p>
+<p>Adding the Configuration to connect to S3 bucket and a fake S3 Bucket(for testing purpose)</p>
+<p>Creating the necessary functions to put and get Objects from the S3 buckets</p>
+<p>Adding a rest Controller that allows the user to add a profile picture to his account</p>
+<p>Settings up all the unit tests to test if functions are working as intended</p>
+<p>Modifying the integration tests to include the testing of the upload and retrieval of the profile pictures</p>
+
+<h1>Creating a Github Workflows</h1>
+<p>Creating a first workflow that on the push will build and verify by running all the unit tests and verify that they all pass</p>
+<p>Creating a second one that will verify that all the integration has passed and after that will package the Spring application inside a dockers container, upload it to DockerHub, and also deploy it to AWS Elastic Bean</p>
  
