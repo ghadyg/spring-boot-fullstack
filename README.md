@@ -45,4 +45,46 @@
 
 # REACT JS
 
-> Coming soon...
+## Description
+
+### Components
+
+- **Login/Login.jsx:** Handles user login functionality.
+- **Signup/Signup.jsx:** Manages user registration.
+
+### Context
+
+- **AuthContext.jsx:** Provides authentication context for managing user sessions.
+
+### Customer
+
+- **Card.jsx:** Displays customer information.
+- **CreateCustomerForm.jsx:** Form to create new customers.
+- **DrawerForm.jsx:** Drawer form component.
+- **UpdateCustomerForm.jsx:** Form to update existing customers.
+- **UpdateDrawerForm.jsx:** Drawer form for updating customers.
+
+### Shared
+
+- **ProtectedRoute.jsx:** Ensures routes are accessible only to authenticated users.
+- **SideBar.jsx:** Sidebar navigation component.
+
+### Services
+
+- **client.js:** Axios client setup for making HTTP requests.
+- **notification.js:** Notification service for displaying alerts and messages.
+
+### Other Files
+
+- **Customer.jsx:** Main customer component that implements infinite scroll functionality to load customers dynamically as the user scrolls, preventing application overload..
+- **Home.jsx:** Home component for the landing page.
+- **index.css:** Global CSS styles.
+- **main.jsx:** Main entry point for the React application.
+
+## Usage
+
+- **Login:** Navigate to `/login` to log in.
+- **Signup:** Navigate to `/signup` to register.
+- **Customer Management:** Use the customer forms to create, update, and view customer information.
+- **Protected Routes:** Ensure routes are secure and only accessible to authenticated users.
+
